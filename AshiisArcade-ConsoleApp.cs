@@ -11,7 +11,7 @@ namespace AshiisArcadeConsole
     internal class Program
     {
         // Option A: Direct IP and Port (Most reliable since 1433 is set in IPAll)
-        static string connString = @"Server=192.168.0.52,1433;Database=ArcadeBlockade;User Id=sa;Password=Password1;TrustServerCertificate=True;"; 
+        static string connString = @"Server=192.168.0.52,1433;Database=ArcadeBlockade;User Id=sa;Password=Password1;TrustServerCertificate=True;";
         static void Main(string[] args)
         {
             MainMenu();
@@ -89,9 +89,10 @@ namespace AshiisArcadeConsole
                 Console.WriteLine("======================================================");
                 Console.WriteLine($"SYSTEM TIME: {DateTime.Now:dd/MM/yyyy HH:mm} | STATUS: OPERATIONAL");
                 Console.WriteLine("======================================================");
-                Console.WriteLine(" [1] Add game              [4] Delete Games");
-                Console.WriteLine(" [2] Add console           [5] Delete Consoles");
-                Console.WriteLine(" [3] Console IDs");
+                Console.WriteLine(" [1] Add game              [5] Delete Games");
+                Console.WriteLine(" [2] Add console           [6] Delete Consoles");
+                Console.WriteLine(" [3] Select * from Games   [7] Console IDs");
+                Console.WriteLine(" [4] Select * from Console");
                 Console.WriteLine(" ");
                 Console.WriteLine(" [9] Return to previous    [0] Exit App");
                 Console.WriteLine("======================================================");
@@ -107,13 +108,19 @@ namespace AshiisArcadeConsole
                         AddNewConsole();
                         break;
                     case "3":
-                        ConsoleIDs();
+                        ShowGameEntries();
                         break;
                     case "4":
-                        DeleteGames();
+                        ShowConsoleEntries();
                         break;
                     case "5":
+                        DeleteGames();
+                        break;
+                    case "6":
                         DeleteConsoles();
+                        break;
+                    case "7":
+                        ConsoleIDs();
                         break;
                     case "9":
                         return; // returns to Main Menu
@@ -135,6 +142,8 @@ namespace AshiisArcadeConsole
             Console.WriteLine("                --- All Entries ---");
             Console.WriteLine("============ ============ ============ ============");
             Console.WriteLine(" ");
+            Console.WriteLine("Title                                         | Console         | Release");
+            Console.WriteLine("-------------------------------------------------------------------------");
             using (SqlConnection connection = new SqlConnection(connString))
             {
                 try
@@ -170,7 +179,7 @@ namespace AshiisArcadeConsole
             Console.WriteLine("============ ============ ============ ============");
             Console.WriteLine(" search Games with only a part of the name needed");
             Console.WriteLine(" Example: 'Petshop' for Littlest Petshop");
-            Console.WriteLine("---------------------------------------------------------");
+            Console.WriteLine("----------------------------------------------------");
 
             using (SqlConnection connection = new SqlConnection(connString))
             {
@@ -211,7 +220,7 @@ namespace AshiisArcadeConsole
             Console.WriteLine("============ ============ ============ ============");
             Console.WriteLine(" search games by Consoles! ");
             Console.WriteLine(" Example: 'Gameboy' to get all Gameboy consoles");
-            Console.WriteLine("---------------------------------------------------------");
+            Console.WriteLine("----------------------------------------------------");
             using (SqlConnection connection = new SqlConnection(connString))
             {
                 try
@@ -251,7 +260,7 @@ namespace AshiisArcadeConsole
             Console.WriteLine("============ ============ ============ ============");
             Console.WriteLine(" With this we can see how many games we have");
             Console.WriteLine(" Pr Console");
-            Console.WriteLine("---------------------------------------------------------");
+            Console.WriteLine("----------------------------------------------------");
             using (SqlConnection connection = new SqlConnection(connString))
             {
                 try
@@ -289,7 +298,7 @@ namespace AshiisArcadeConsole
             Console.WriteLine("           --- Oldest & Newest Games ---");
             Console.WriteLine("============ ============ ============ ============");
             Console.WriteLine(" Here we see oldest & newest releases!");
-            Console.WriteLine("---------------------------------------------------------");
+            Console.WriteLine("----------------------------------------------------");
             using (SqlConnection connection = new SqlConnection(connString))
             {
                 try
@@ -340,7 +349,7 @@ namespace AshiisArcadeConsole
             Console.WriteLine("============ ============ ============ ============");
             Console.WriteLine(" With this we can search for games over a timespan");
             Console.WriteLine(" Example: 1990 to 2000 will show games released in the 90s");
-            Console.WriteLine("---------------------------------------------------------");
+            Console.WriteLine("----------------------------------------------------");
             using (SqlConnection connection = new SqlConnection(connString))
             {
                 try
@@ -378,37 +387,6 @@ namespace AshiisArcadeConsole
         }
 
         // creation menu functions
-        static void ConsoleIDs()
-        {
-            Console.Clear();
-            Console.WriteLine("               --- Console IDs ---");
-            Console.WriteLine("============ ============ ============ ============");
-            Console.WriteLine(" ");
-            Console.WriteLine("------------------------ ------------------------");
-            Console.WriteLine("    --Nintendo 10x--          -- Atari 20x--");
-            Console.WriteLine("------------------------ ------------------------");
-            Console.WriteLine("--NES               101  --Atari 2600        201");
-            Console.WriteLine("--SNES              102  ------------------------");
-            Console.WriteLine("--N64               103     -- Commodore 30x--");
-            Console.WriteLine("--GameCube          104  ------------------------");
-            Console.WriteLine("--Gameboy           105  --Commodore 64      301");
-            Console.WriteLine("--Gameboy Colour    106");
-            Console.WriteLine("--Gameboy Advance   107");
-            Console.WriteLine("--Nintendo DS       108");
-            Console.WriteLine("--Nintendo DS Lite  109");
-            Console.WriteLine("--Nintendo DS XL    110");
-            Console.WriteLine(" ");
-            Console.WriteLine("------------------------ ------------------------");
-            Console.WriteLine("    -- Sony 40x--           -- Microsoft 50x--");
-            Console.WriteLine("------------------------ ------------------------");
-            Console.WriteLine("--Playstation 1     401  --Xbox              501");
-            Console.WriteLine("--Playstation 2     402  --Xbox 360          502");
-            Console.WriteLine("--Playstation 3     403  --Xbox One          503");
-            Console.WriteLine(" ");
-            Console.WriteLine("============ ============ ============ ============");
-            Console.WriteLine("Press any key to go back...");
-            Console.ReadKey();
-        }
         static void AddNewGame()
         {
             Console.Clear();
@@ -417,7 +395,7 @@ namespace AshiisArcadeConsole
             Console.WriteLine(" --- Paste SQL-Style Values (Multiple Lines) ---");
             Console.WriteLine(" Format: ('Title', ConID, Release Year),");
             Console.WriteLine(" Add games and press ENTER on a blank line to finish:");
-            Console.WriteLine("---------------------------------------------------------");
+            Console.WriteLine("----------------------------------------------------");
 
             StringBuilder sb = new StringBuilder();
             string line;
@@ -483,7 +461,7 @@ namespace AshiisArcadeConsole
             Console.WriteLine(" --- Paste Console SQL-Style Values ---");
             Console.WriteLine(" Format: (ConID, 'ConsoleName', 'Company'),");
             Console.WriteLine(" Paste your block and press ENTER on a blank line:");
-            Console.WriteLine("---------------------------------------------------------");
+            Console.WriteLine("----------------------------------------------------");
 
             StringBuilder sb = new StringBuilder();
             string line;
@@ -527,6 +505,73 @@ namespace AshiisArcadeConsole
             Console.WriteLine("Press any key to go back...");
             Console.ReadKey();
         }
+        static void ShowConsoleEntries()
+        {
+            Console.Clear();
+            Console.WriteLine("           --- Console Details ---");
+            Console.WriteLine("============ ============ ============ ============");
+            Console.WriteLine(" This shows all console details!");
+            Console.WriteLine("----------------------------------------------------");
+            Console.WriteLine("CID | Console           | Company");
+            Console.WriteLine("----------------------------------------------------");
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                try
+                {
+                    connection.Open();
+                    string sql = @"
+                        select *
+                        from [ArcadeBlockade].[dbo].[Console] ";
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Console.WriteLine($"{reader["ConID"].ToString().Trim()} | {reader["Console"].ToString().Trim().PadRight(17)} | {reader["Company"].ToString().Trim().PadRight(20)}");
+                        }
+                    }
+                }
+                catch (Exception ex) { Console.WriteLine("Error: " + ex.Message); }
+            }
+            Console.WriteLine(" ");
+            Console.WriteLine("============ ============ ============ ============");
+            Console.WriteLine("Press any key to go back...");
+            Console.ReadKey();
+        }
+        static void ShowGameEntries()
+        {
+            Console.Clear();
+            Console.WriteLine("             --- Game Details ---");
+            Console.WriteLine("============ ============ ============ ============");
+            Console.WriteLine(" This shows all game details!");
+            Console.WriteLine("----------------------------------------------------");
+            Console.WriteLine("ID  | Title                                         | CID | Release");
+            Console.WriteLine("-------------------------------------------------------------------");
+
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                try
+                {
+                    connection.Open();
+                    string sql = @"
+                        select *
+                        from [ArcadeBlockade].[dbo].[Game] ";
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Console.WriteLine($"{reader["ID"]} | {reader["Title"].ToString().Trim().PadRight(45)} | {reader["ConID"].ToString().Trim()} | {reader["Release"]}");
+                        }
+                    }
+                }
+                catch (Exception ex) { Console.WriteLine("Error: " + ex.Message); }
+            }
+            Console.WriteLine(" ");
+            Console.WriteLine("============ ============ ============ ============");
+            Console.WriteLine("Press any key to go back...");
+            Console.ReadKey();
+        }
         static void DeleteGames()
         {
             Console.Clear();
@@ -535,7 +580,7 @@ namespace AshiisArcadeConsole
             Console.WriteLine(" Enter titles separated by commas or new lines.");
             Console.WriteLine(" Example: 'Pac-Man', 'Digimon World'");
             Console.WriteLine(" Press ENTER on a blank line to finish:");
-            Console.WriteLine("---------------------------------------------------------");
+            Console.WriteLine("----------------------------------------------------");
 
             StringBuilder sb = new StringBuilder();
             string line;
@@ -625,7 +670,7 @@ namespace AshiisArcadeConsole
             Console.WriteLine(" Enter names separated by commas or new lines.");
             Console.WriteLine(" Example: 'Playstation 2', 'Xbox One'");
             Console.WriteLine(" Press ENTER on a blank line to finish:");
-            Console.WriteLine("---------------------------------------------------------");
+            Console.WriteLine("----------------------------------------------------");
 
             StringBuilder sb = new StringBuilder();
             string line;
@@ -715,6 +760,37 @@ namespace AshiisArcadeConsole
                 }
                 catch (Exception ex) { Console.WriteLine("Error: " + ex.Message); }
             }
+            Console.WriteLine(" ");
+            Console.WriteLine("============ ============ ============ ============");
+            Console.WriteLine("Press any key to go back...");
+            Console.ReadKey();
+        }
+        static void ConsoleIDs()
+        {
+            Console.Clear();
+            Console.WriteLine("               --- Console IDs ---");
+            Console.WriteLine("============ ============ ============ ============");
+            Console.WriteLine(" ");
+            Console.WriteLine("------------------------ ------------------------");
+            Console.WriteLine("    --Nintendo 10x--          -- Atari 20x--");
+            Console.WriteLine("------------------------ ------------------------");
+            Console.WriteLine("--NES               101  --Atari 2600        201");
+            Console.WriteLine("--SNES              102  ------------------------");
+            Console.WriteLine("--N64               103     -- Commodore 30x--");
+            Console.WriteLine("--GameCube          104  ------------------------");
+            Console.WriteLine("--Gameboy           105  --Commodore 64      301");
+            Console.WriteLine("--Gameboy Colour    106");
+            Console.WriteLine("--Gameboy Advance   107");
+            Console.WriteLine("--Nintendo DS       108");
+            Console.WriteLine("--Nintendo DS Lite  109");
+            Console.WriteLine("--Nintendo DS XL    110");
+            Console.WriteLine(" ");
+            Console.WriteLine("------------------------ ------------------------");
+            Console.WriteLine("    -- Sony 40x--           -- Microsoft 50x--");
+            Console.WriteLine("------------------------ ------------------------");
+            Console.WriteLine("--Playstation 1     401  --Xbox              501");
+            Console.WriteLine("--Playstation 2     402  --Xbox 360          502");
+            Console.WriteLine("--Playstation 3     403  --Xbox One          503");
             Console.WriteLine(" ");
             Console.WriteLine("============ ============ ============ ============");
             Console.WriteLine("Press any key to go back...");
