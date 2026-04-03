@@ -10,7 +10,6 @@ namespace AshiisArcadeConsole
 {
     internal class Program
     {
-        // Option A: Direct IP and Port (Most reliable since 1433 is set in IPAll)
         static string connString = @"Server=192.168.0.52,1433;Database=ArcadeBlockade;User Id=sa;Password=Password1;TrustServerCertificate=True;";
         static void Main(string[] args)
         {
