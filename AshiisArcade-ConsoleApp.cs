@@ -511,7 +511,7 @@ namespace AshiisArcadeConsole
             Console.WriteLine("============ ============ ============ ============");
             Console.WriteLine(" This shows all console details!");
             Console.WriteLine("----------------------------------------------------");
-            Console.WriteLine("CID | Console           | Company");
+            Console.WriteLine("CID | Console             | Company");
             Console.WriteLine("----------------------------------------------------");
             using (SqlConnection connection = new SqlConnection(connString))
             {
@@ -526,7 +526,7 @@ namespace AshiisArcadeConsole
                     {
                         while (reader.Read())
                         {
-                            Console.WriteLine($"{reader["ConID"].ToString().Trim()} | {reader["Console"].ToString().Trim().PadRight(17)} | {reader["Company"].ToString().Trim().PadRight(20)}");
+                            Console.WriteLine($"{reader["ConID"].ToString().Trim()} | {reader["Console"].ToString().Trim().PadRight(19)} | {reader["Company"].ToString().Trim().PadRight(20)}");
                         }
                     }
                 }
@@ -780,9 +780,12 @@ namespace AshiisArcadeConsole
             Console.WriteLine("--Gameboy           105  --Commodore 64      301");
             Console.WriteLine("--Gameboy Colour    106");
             Console.WriteLine("--Gameboy Advance   107");
-            Console.WriteLine("--Nintendo DS       108");
-            Console.WriteLine("--Nintendo DS Lite  109");
-            Console.WriteLine("--Nintendo DS XL    110");
+            Console.WriteLine("--Gameboy Advance   108");
+            Console.WriteLine("--Nintendo DS       109");
+            Console.WriteLine("--Nintendo DS Lite  110");
+            Console.WriteLine("--Nintendo DS XL    111");
+            Console.WriteLine("--Nintendo Wii      112");
+            Console.WriteLine("--Nintendo Switch   113");
             Console.WriteLine(" ");
             Console.WriteLine("------------------------ ------------------------");
             Console.WriteLine("    -- Sony 40x--           -- Microsoft 50x--");
