@@ -1,15 +1,15 @@
 --Games inserts
-NES
+--NES
     ('Duck Hunt', 101, 1984),
     ('Super Mario Bros.', 101, 1985),
     ('Ice Climber', 101, 1985),
-    ('Snake Rattle N Roll', 101, 1990)
-SNES
+    ('Snake Rattle N Roll', 101, 1990),
+--SNES
     ('Super Mario All Stars', 102, 1993),
     ('Donkey Kong Country', 102, 1994),
     ('Mechwarrior', 102, 1994),
-    ('Lagoon', 102, 1990)
-N64
+    ('Lagoon', 102, 1990),
+--N64
     ('Super Mario 64', 103, 1996),
     ('Mario Kart 64', 103, 1996),
     ('Mission Impossible', 103, 1998),
@@ -17,58 +17,59 @@ N64
     ('Wave Race 64', 103, 1996),
     ('Topgear Rally 2', 103, 1999),
     ('FIFA 64', 103, 1997),
-    ('Pokémon Stadium', 103, 1999)
-GameCube
+    ('Pokémon Stadium', 103, 1999),
+--GameCube
     ('Mario Kart: Double Dash', 104, 2003),
     ('Super Mario Sunshine', 104, 2002),
     ('Metroid Prime', 104, 2002),
     ('Super Smash Bros: Melee', 104, 2001),
     ('Spyro: Enter the Dragonfly', 104, 2002),
-    ('Legend of Zelda: The Wind Waker', 104, 2002)
-Gameboy
+    ('Legend of Zelda: The Wind Waker', 104, 2002),
+--Gameboy
     ('Pokemon Red', 105, 1996),
     ('Super Mario Land 2', 105, 1992),
     ('Kirby’s Dream Land', 105, 1992),
-    ('Mario & Yoshi', 105, 1991)
-Gameboy Color
+    ('Mario & Yoshi', 105, 1991),
+--Gameboy Color
     ('Pokemon Crystal', 106, 2001),
     ('WarioLand 2', 106, 1998),
-    ('Metroid 2: Return of Samus', 106, 1992)
-Gameboy advance
+    ('Metroid 2: Return of Samus', 106, 1992),
+--Gameboy advance
     ('Mario Kart Super Circuit', 107, 2001),
     ('Pokemon Sapphire', 107, 2002),
     ('Pokemon Ruby', 107, 2002),
     ('Super Mario World: Super Mario Adventure 2', 107, 2001),
-    ('Pokemon Mystery Dungeon', 107, 2005)
-Nintendo DS
-    ('Littlest Petshop: Garden', 108, 2008),
-    ('Spyro: Eternal Night', 108, 2007),
-    ('Spyro: A New Beginning', 108, 2006),
-    ('Hello Kitty Birthday Adventures', 108, 2010),
-    ('Littlest Petshop: Jungle', 108, 2008),
-    ('Littlest Petshop: City', 108, 2009),
-    ('Littlest Petshop: Beach', 108, 2009),
-    ('Littlest Petshop: Biggest Stars Purple Team', 108, 2010)
-Nintendo Wii
-    ('Wii Sports', 111, 2006),
-    ('Wii Play', 111, 2006),
-    ('Just Dance 3', 111, 2011),
-    ('Just Dance 4', 111, 2012),
-    ('Just Dance 2014', 111, 2013),
-    ('Just Dance 2015', 111, 2014),
-    ('Just Dance 2016', 111, 2015),
-    ('Just Dance Disney Party', 111, 2012),
-    ('Littlest Pet Shop: Friends', 111, 2009),
-Nintendo Switch
-    ('Mario Kart 8 Deluxe', 112, 2017),
-    ('Stardew Valley', 112, 2017),
-    ('The Witcher 3: Wild Hunt - CE', 112, 2019),
-    ('Ring Fit Adventure', 112, 2019),
-    ('Legend of Zelda: Breath of the Wild', 112, 2017),
-    ('Mario Party Superstars', 112, 2021),
-    ('Mortal Kombat 1', 112, 2023),
-    ('KeyWe', 112, 2021),
-Atari 2600
+    ('Pokemon Mystery Dungeon', 107, 2005),
+    ('Banjo Kazooie: Gruntys Revenge', 107, 2003),
+--Nintendo DS
+    ('Littlest Petshop: Garden', 109, 2008),
+    ('Spyro: Eternal Night', 109, 2007),
+    ('Spyro: A New Beginning', 109, 2006),
+    ('Hello Kitty Birthday Adventures', 109, 2010),
+    ('Littlest Petshop: Jungle', 109, 2008),
+    ('Littlest Petshop: City', 109, 2009),
+    ('Littlest Petshop: Beach', 109, 2009),
+    ('Littlest Petshop: Biggest Stars Purple Team', 109, 2010),
+--Nintendo Wii
+    ('Wii Sports', 112, 2006),
+    ('Wii Play', 112, 2006),
+    ('Just Dance 3', 112, 2011),
+    ('Just Dance 4', 112, 2012),
+    ('Just Dance 2014', 112, 2013),
+    ('Just Dance 2015', 112, 2014),
+    ('Just Dance 2016', 112, 2015),
+    ('Just Dance Disney Party', 112, 2012),
+    ('Littlest Pet Shop: Friends', 112, 2009),
+--Nintendo Switch
+    ('Mario Kart 8 Deluxe', 113, 2017),
+    ('Stardew Valley', 113, 2017),
+    ('The Witcher 3: Wild Hunt - CE', 113, 2019),
+    ('Ring Fit Adventure', 113, 2019),
+    ('Legend of Zelda: Breath of the Wild', 113, 2017),
+    ('Mario Party Superstars', 113, 2021),
+    ('Mortal Kombat 1', 113, 2023),
+    ('KeyWe', 113, 2021),
+--Atari 2600
     ('Solar Fox', 201, 1981),
     ('Space Invaders', 201, 1978),
     ('MotoRodeo', 201, 1990),
@@ -87,8 +88,8 @@ Atari 2600
     ('Pole Position', 201, 1982),
     ('Football - RealSports Soccer', 201, 1982),
     ('Circus Atari', 201, 1980),
-    ('QBert', 201, 1983)
-Commodore 64
+    ('QBert', 201, 1983),
+--Commodore 64
     ('1942', 301, 1986),
     ('Archon', 301, 1984),
     ('Arkanoid', 301, 1988),
@@ -121,13 +122,13 @@ Commodore 64
     ('Tapper', 301, 1984),
     ('Wizard of Wor', 301, 1983),
     ('Wizball', 301, 1987),
-    ('Yie Ar Kung-Fu', 301, 1986)
-Playstation 1
+    ('Yie Ar Kung-Fu', 301, 1986),
+--Playstation 1
     ('Space Invaders', 401, 1999),
     ('Rayman', 401, 1995),
     ('Spyro The Dragon', 401, 1998),
-    ('Digimon World', 401, 1999)
-Playstation 2
+    ('Digimon World', 401, 1999),
+--Playstation 2
     ('Sly Cooper 3 Honor Among Thieves', 402, 2005),
     ('Lego Star Wars II: The Original Trilogy', 402, 2006),
     ('Ratchet & Clank: Going Commando', 402, 2003),
@@ -146,8 +147,8 @@ Playstation 2
     ('Seek and Destroy', 402, 2002),
     ('Asterix & Obelix: Kick Buttix', 402, 2004),
     ('Looney Tunes: ACME Arsenal', 402, 2007),
-    ('Tekken 5', 402, 2005)
-Playstation 3
+    ('Tekken 5', 402, 2005),
+--Playstation 3
     ('The Darkness', 403, 2007),
     ('Metal Gear Solid 4: Guns of the Patriots', 403, 2008),
     ('Red Dead Redemption', 403, 2010),
@@ -170,8 +171,8 @@ Playstation 3
     ('Fight Night Champion', 403, 2011),
     ('Sports Topspin 4', 403, 2011),
     ('Sports Champions', 403, 2010),
-    ('Playstation Move Starter Disc', 403, 2010)
-Xbox
+    ('Playstation Move Starter Disc', 403, 2010),
+--Xbox
     ('Doom 3', 501, 2005),
     ('Halo 2', 501, 2004),
     ('Medal of Honor: Frontlines', 501, 2002),
@@ -194,8 +195,8 @@ Xbox
     ('Need for Speed: Underground', 501, 2003),
     ('Driv3r', 501, 2004),
     ('Burnout 3: Takedown', 501, 2004),
-    ('World Poker Tour', 501, 2006)
-Xbox 360
+    ('World Poker Tour', 501, 2006),
+--Xbox 360
     ('Fallout 3', 502, 2008),
     ('Fallout: New Vegas', 502, 2010),
     ('Red Dead Redemption', 502, 2010),
@@ -214,15 +215,15 @@ Xbox 360
     ('Forza Motorsport 3', 502, 2009),
     ('FIFA 12', 502, 2011),
     ('Lego Batman 3: Beyond Gotham', 502, 2014),
-    ('Knights Contract', 502, 2011)
-Xbox One
+    ('Knights Contract', 502, 2011),
+--Xbox One
     ('Fallout 4', 503, 2015),
     ('Fallout 76', 503, 2018),
     ('Sea of Thieves', 503, 2018),
     ('Tales from the Borderlands', 503, 2014),
     ('Borderlands 3', 503, 2019),
     ('The Outer Worlds', 503, 2019),
-    ('The Callisto Protocol', 503, 2022)
+    ('The Callisto Protocol', 503, 2022),
 
 --Deleting consoles format
 
